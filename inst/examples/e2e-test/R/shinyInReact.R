@@ -11,6 +11,11 @@ shinyInReactUI <- function(id) {
           textInput(ns("textInputHidden"), "Label"),
           textOutput(ns("textInputHiddenValue"))
         )
+      ),
+      PivotItem(
+        headerText = "Shiny input",
+        textInput(ns("textInputInitial"), label = "Shiny input test", value = "initial"),
+        textOutput(ns("textInputInitialValue"))
       )
     ),
     Separator(strong("Shiny components dynamic rendering")),
@@ -54,7 +59,7 @@ shinyInReactServer <- function(id) {
       updateTextField.shinyInput(session, ns("textInputButton"), value = "new text")
     })
     
-    ids <- c("textInput", "textAreaInput", "checkboxInput",
+    ids <- c("textInput", "textAreaInput", "checkboxInput", "textInputInitial",
              "textInputHidden", "textInputButton", "textInputShiny") 
     wireInputToOutput(ids, input, output)
   })

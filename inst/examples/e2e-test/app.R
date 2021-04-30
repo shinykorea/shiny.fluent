@@ -1,12 +1,15 @@
 library(shiny)
 library(shiny.fluent)
+library(leaflet)
+library(DT)
 
 ui <- fluidPage(
   fluentInputsUI("fluentInputs"),
   shinyInReactUI("shinyInReact"),
   scenariosUI("scenarios"),
   actionButtonsUI("actionButtons"),
-  reactInShinyUI("reactInShiny")
+  reactInShinyUI("reactInShiny"),
+  customOutputUI("customOutput")
 )
 
 server <- function(input, output, session) {
@@ -16,6 +19,7 @@ server <- function(input, output, session) {
   scenariosServer("scenarios")
   actionButtonsServer("actionButtons")
   reactInShinyServer("reactInShiny")
+  customOutputServer("customOutput")
   
 }
 
