@@ -358,6 +358,9 @@ TextField <- component("TextField")
 #' @export
 TextField <- component("TextField")
 
+#' @export
+ThemeProvider <- component("ThemeProvider")
+
 #' @rdname Toggle
 #' @export
 Toggle <- component("Toggle")
